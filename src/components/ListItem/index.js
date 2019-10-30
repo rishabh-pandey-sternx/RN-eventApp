@@ -8,21 +8,31 @@ import styles from './style';
 
 const ListItem = ({item, move, moveEnd, isActive, onHeartPress, view}) => {
   return (
-    <SwipeRow rightOpenValue={-75}>
-      <View style={styles.hidden}>
-        <TouchableOpacity onPress={onHeartPress}>
-          <Text>slideText</Text>
-          {/* <Icon name={item.favorite ? 'heart' : 'heart-o'} /> */}
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={{}}
-        onLongPress={move}
-        onPressOut={moveEnd}>
-        <Image view={view} imageURI={item.uri} name={item.name} />
-      </TouchableOpacity>
-    </SwipeRow>
+    <View>
+      {!view ? (
+        <SwipeRow rightOpenValue={-75}>
+          <View style={styles.hidden}>
+            <TouchableOpacity onPress={onHeartPress}>
+              <Text>slideText</Text>
+              {/* <Icon name={item.favorite ? 'heart' : 'heart-o'} /> */}
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity
+            activeOpacity={1}
+            style={{}}
+            onLongPress={move}
+            onPressOut={moveEnd}>
+            <Image view={view} imageURI={item.uri} name={item.name} />
+          </TouchableOpacity>
+        </SwipeRow>
+      ) : (
+        <View style={{flex: 1}}>
+          <TouchableOpacity activeOpacity={1} style={{}}>
+            <Image view={view} imageURI={item.uri} name={item.name} />
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
   );
 };
 
