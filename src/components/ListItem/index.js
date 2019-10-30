@@ -10,7 +10,7 @@ const ListItem = ({item, move, moveEnd, onHeartPress, view}) => {
   return (
     <View>
       {!view ? (
-        <SwipeRow rightOpenValue={-75}>
+        <SwipeRow rightOpenValue={-75} stopLeftSwipe>
           <View style={styles.hidden}>
             <TouchableOpacity onPress={onHeartPress}>
               <Text>slideText</Text>

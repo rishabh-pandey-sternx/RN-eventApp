@@ -18,9 +18,11 @@
     "react-native-draggable-flatlist": "^1.1.9",
     "react-native-elements": "^1.2.7",
     "react-native-fast-image": "^7.0.2",
+    "react-native-gesture-handler": "^1.5.0",
     "react-native-swipe-list-view": "^2.0.3",
     "react-native-vector-icons": "^6.6.0",
-    "react-navigation": "^4.0.10"
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
