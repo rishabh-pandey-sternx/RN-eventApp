@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
   TouchableOpacity,
-  FlatList,
   ActivityIndicator,
   StyleSheet,
   View,
@@ -11,7 +10,6 @@ import {
 import DraggableFlatList from 'react-native-draggable-flatlist';
 
 import ListItem from './src/components/ListItem';
-import ListItemGrid from './src/components/ListItemGrid';
 import data from './src/config/data';
 
 export default class App extends Component {
@@ -71,13 +69,12 @@ export default class App extends Component {
                 data={this.state.imagesData}
                 key={this.state.gridView ? 1 : 0}
                 numColumns={this.state.gridView ? 2 : 1}
-                renderItem={({item, move, moveEnd, isActive}) => (
+                renderItem={({item, move, moveEnd}) => (
                   <ListItem
                     item={item}
                     view={this.state.gridView}
                     move={move}
                     moveEnd={moveEnd}
-                    isActive={isActive}
                     onHeartPress={() => this.toggleFavorite(item)}
                   />
                 )}

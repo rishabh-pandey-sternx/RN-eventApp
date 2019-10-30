@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons';
 import Image from '../Image';
 import styles from './style';
 
-const ListItem = ({item, move, moveEnd, isActive, onHeartPress, view}) => {
+const ListItem = ({item, move, moveEnd, onHeartPress, view}) => {
   return (
     <View>
       {!view ? (
