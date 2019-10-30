@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, View, Text} from 'react-native';
+import {TouchableOpacity, Text, ScrollView, Image, View} from 'react-native';
 
-import styles from './style';
+import style from './style';
 
 export default class EventDetails extends Component {
   constructor() {
@@ -10,14 +10,23 @@ export default class EventDetails extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={style.container}>
         <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.buttonDesign}
-          onPress={this.changeView}>
-          <Text style={styles.buttonText}>{this.state.btnText}</Text>
+          style={style.eventCard}
+          onPress={() => console.log('ii')}>
+          <Image source={{uri: 'image'}} style={style.eventBgImg} />
+          <View style={style.coverOverlay} />
+          <View style={style.eventInfo}>
+            <View style={style.eventInfoLeft}>
+              <Text style={style.eventTitle} numberOfLines={1}>
+                {'name'}
+              </Text>
+              <Text style={style.subtext}>{'dateTime'}</Text>
+              <Text style={style.subtext}>{'test'}</Text>
+            </View>
+          </View>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     );
   }
 }

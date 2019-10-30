@@ -72,6 +72,7 @@ export default class Home extends Component {
                 numColumns={this.state.gridView ? 2 : 1}
                 renderItem={({item, move, moveEnd}) => (
                   <ListItem
+                    navigation={this.props.navigation}
                     item={item}
                     view={this.state.gridView}
                     move={move}

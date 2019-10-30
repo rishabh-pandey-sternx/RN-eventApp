@@ -18,6 +18,7 @@ const AppNavigator = createStackNavigator(
     },
   },
   {
+    // initialRouteName: 'EventDetails',
     initialRouteName: 'Login',
     headerMode: 'none',
   },
