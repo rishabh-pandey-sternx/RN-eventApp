@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "name": "Metallica Concert",
+    "entry_fee": true,
+    "fees": 2000,
+    "place": "Palace Grounds",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 1,
+    "name": "Saree Exhibition",
+    "entry_fee": false,
+    "fees": 200,
+    "place": "Malleswaram Grounds",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 2,
+    "name": "Wine tasting event",
+    "entry_fee": true,
+    "fees": 1000,
+    "place": "Links Brewery",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 3,
+    "name": "Startups Meet",
+    "entry_fee": true,
+    "fees": 100,
+    "place": "Kanteerava Indoor Stadium",
+    "uri": "",
+    "fav": true
+  },
+  {
+    "id": 4,
+    "name": "Summer Noon Party",
+    "entry_fee": true,
+    "fees": 500,
+    "place": "Kumara Park",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 5,
+    "name": "Rock and Roll nights",
+    "entry_fee": true,
+    "fees": 1500,
+    "place": "Sarjapur Road",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 6,
+    "name": "Barbecue Fridays",
+    "entry_fee": true,
+    "fees": 1300,
+    "place": "Whitefield",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 7,
+    "name": "Summer workshop",
+    "entry_fee": false,
+    "fees": 0,
+    "place": "Indiranagar",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 8,
+    "name": "Impressions & Expression",
+    "entry_fee": false,
+    "fees": 0,
+    "place": "MG Road",
+    "uri": "",
+    "fav": false
+  },
+  {
+    "id": 9,
+    "name": "Italian carnival",
+    "entry_fee": false,
+    "fees": 0,
+    "place": "Electronic City",
+    "uri": "",
+    "fav": false
+  }
+]
