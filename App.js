@@ -8,8 +8,10 @@ import {
   Text,
   SafeAreaView,
 } from 'react-native';
+import DraggableFlatList from 'react-native-draggable-flatlist';
 
 import Image from './src/components/Image';
+import ListItem from './src/components/ListItem';
 import data from './src/config/data';
 
 export default class App extends Component {
@@ -36,6 +38,17 @@ export default class App extends Component {
       }
     });
   };
+  onMoveEnd = ({data}) => {
+    this.setState({data: data ? [...data] : []});
+  };
+
+  toggleFavorite = value => {
+    const data = this.state.imagesData.map(item =>
+      item.id !== value.id ? item : {...item, favorite: !item.favorite},
+    );
+    this.setState({imagesData: data});
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -54,14 +67,23 @@ export default class App extends Component {
                 <Text style={styles.buttonText}>{this.state.btnText}</Text>
               </TouchableOpacity>
 
-              <FlatList
-                keyExtractor={item => item.id}
+              <DraggableFlatList
+                data={this.state.imagesData}
                 key={this.state.gridView ? 1 : 0}
                 numColumns={this.state.gridView ? 2 : 1}
-                data={this.state.imagesData}
-                renderItem={({item}) => (
-                  <Image imageURI={item.uri} name={item.name} />
+                renderItem={({item, move, moveEnd, isActive}) => (
+                  <ListItem
+                    item={item}
+                    view={this.state.gridView}
+                    move={move}
+                    moveEnd={moveEnd}
+                    isActive={isActive}
+                    onHeartPress={() => this.toggleFavorite(item)}
+                  />
                 )}
+                keyExtractor={item => item.id}
+                scrollPercent={5}
+                onMoveEnd={this.onMoveEnd}
               />
             </View>
           )}
