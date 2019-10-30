@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 
-import Image from './src/components/Image';
 import ListItem from './src/components/ListItem';
+import ListItemGrid from './src/components/ListItemGrid';
 import data from './src/config/data';
 
 export default class App extends Component {
@@ -71,16 +71,27 @@ export default class App extends Component {
                 data={this.state.imagesData}
                 key={this.state.gridView ? 1 : 0}
                 numColumns={this.state.gridView ? 2 : 1}
-                renderItem={({item, move, moveEnd, isActive}) => (
-                  <ListItem
-                    item={item}
-                    view={this.state.gridView}
-                    move={move}
-                    moveEnd={moveEnd}
-                    isActive={isActive}
-                    onHeartPress={() => this.toggleFavorite(item)}
-                  />
-                )}
+                renderItem={({item, move, moveEnd, isActive}) =>
+                  !this.state.gridView ? (
+                    <ListItem
+                      item={item}
+                      view={this.state.gridView}
+                      move={move}
+                      moveEnd={moveEnd}
+                      isActive={isActive}
+                      onHeartPress={() => this.toggleFavorite(item)}
+                    />
+                  ) : (
+                    <ListItemGrid
+                      item={item}
+                      view={this.state.gridView}
+                      move={move}
+                      moveEnd={moveEnd}
+                      isActive={isActive}
+                      onHeartPress={() => this.toggleFavorite(item)}
+                    />
+                  )
+                }
                 keyExtractor={item => item.id}
                 scrollPercent={5}
                 onMoveEnd={this.onMoveEnd}
