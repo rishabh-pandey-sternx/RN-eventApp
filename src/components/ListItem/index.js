@@ -7,7 +7,6 @@ import Image from '../Image';
 import styles from './style';
 
 const ListItem = ({item, move, moveEnd, onHeartPress, view, navigation}) => {
-  console.log(navigation, 'navigation');
   return (
     <View>
       {!view ? (
@@ -23,7 +22,7 @@ const ListItem = ({item, move, moveEnd, onHeartPress, view, navigation}) => {
             style={{}}
             onLongPress={move}
             onPressOut={moveEnd}
-            onPress={() => navigation.navigate('EventDetails')}>
+            onPress={() => navigation.navigate('EventDetails', {item})}>
             <Image view={view} imageURI={item.uri} name={item.name} />
           </TouchableOpacity>
         </SwipeRow>
@@ -32,7 +31,7 @@ const ListItem = ({item, move, moveEnd, onHeartPress, view, navigation}) => {
           <TouchableOpacity
             activeOpacity={1}
             style={{}}
-            onPress={() => navigation.navigate('EventDetails')}>
+            onPress={() => navigation.navigate('EventDetails', {item})}>
             <Image view={view} imageURI={item.uri} name={item.name} />
           </TouchableOpacity>
         </View>

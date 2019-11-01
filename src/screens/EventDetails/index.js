@@ -9,6 +9,7 @@ export default class EventDetails extends Component {
   }
 
   render() {
+    console.log(this.props.navigation.state.params, 'porops');
     return (
       <ScrollView style={style.container}>
         <TouchableOpacity

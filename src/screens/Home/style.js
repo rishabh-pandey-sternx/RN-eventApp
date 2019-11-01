@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -16,6 +16,15 @@ export default StyleSheet.create({
   },
   buttonDesign: {
     padding: 15,
+    // width: Dimensions.get('window').width - 40,
+    backgroundColor: 'green',
+    alignContent: 'space-around',
+    justifyContent: 'space-between',
+  },
+  buttonDesign1: {
+    padding: 15,
+    alignItems: 'flex-end',
+    // width: Dimensions.get('window').width - 40,
     backgroundColor: 'green',
   },
   buttonText: {

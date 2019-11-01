@@ -7,6 +7,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import ListItem from '../../components/ListItem';
 import data from '../../config/data';
@@ -25,6 +26,11 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.setState({loading: false});
+  }
+
+  logout() {
+    AsyncStorage.clear();
+    this.props.navigation.navigate('Login');
   }
 
   changeView = () => {
@@ -59,13 +65,20 @@ export default class Home extends Component {
             </View>
           ) : (
             <View style={styles.container}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                style={styles.buttonDesign}
-                onPress={this.changeView}>
-                <Text style={styles.buttonText}>{this.state.btnText}</Text>
-              </TouchableOpacity>
-
+              <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.buttonDesign}
+                  onPress={this.changeView}>
+                  <Text style={styles.buttonText}>{this.state.btnText}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.buttonDesign1}
+                  onPress={this.logout}>
+                  <Text style={styles.buttonText}>Logout</Text>
+                </TouchableOpacity>
+              </View>
               <DraggableFlatList
                 data={this.state.imagesData}
                 key={this.state.gridView ? 1 : 0}
