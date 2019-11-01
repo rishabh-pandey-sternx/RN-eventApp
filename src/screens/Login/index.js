@@ -5,7 +5,9 @@ import {
   Text,
   KeyboardAvoidingView,
   TextInput,
+  Alert,
 } from 'react-native';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './style';
 
@@ -14,35 +16,56 @@ export default class Login extends Component {
     super();
     this.state = {
       username: '',
+      password: '',
+      showPassword: false,
     };
   }
   save() {
-    console.log('nknbjnbj');
-    if (this.state.username !== '') {
-      this.props.navigation.navigate('Home');
+    const {username, password} = this.state;
+    const {navigation} = this.props;
+    if (username === 'Rishabh' && password === 'Password12') {
+      navigation.navigate('Home');
+    } else {
+      Alert.alert('LogIn Failed', 'Incorrect Credentials');
     }
   }
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container} enabled>
         <View style={styles.mainBody}>
-          <View style={{marginBottom: 14}}>
-            <TouchableOpacity>
-              <TextInput
-                autoCapitalize="none"
-                style={styles.inputUser}
-                placeholder="username"
-                onChangeText={username => this.setState({username})}
-              />
-            </TouchableOpacity>
+          <View style={styles.form}>
+            <View style={styles.inputGroup}>
+              <View>
+                <TextInput
+                  placeholder={'UserName'}
+                  style={styles.inputBox}
+                  value={this.state.username}
+                  onChangeText={username => this.setState({username})}
+                />
+              </View>
+            </View>
+            <View style={styles.inputGroup}>
+              <View>
+                <TextInput
+                  placeholder={'Password'}
+                  style={styles.inputBox}
+                  value={this.state.password}
+                  secureTextEntry={this.state.showPassword}
+                  onChangeText={password => this.setState({password})}
+                />
+              </View>
+            </View>
+            <View>
+              <TouchableOpacity
+                disabled={
+                  this.state.password === '' || this.state.username === ''
+                }
+                style={styles.button}
+                onPress={() => this.save()}>
+                <Text style={{color: '#a293f8', fontSize: 20}}>Login</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-
-          {/* Save button */}
-          <TouchableOpacity
-            onPress={() => this.save()}
-            style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Save</Text>
-          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     );

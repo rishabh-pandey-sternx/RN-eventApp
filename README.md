@@ -30,3 +30,8 @@ Run your app on an emulator, simulator, or your own connected device.
 
 - To run the app on iOS run `npm run ios`.
 - To run the app on Android run `npm run android`.
+
+### Login Details
+
+Username -> Rishabh
+Password -> Password12
