@@ -16,7 +16,6 @@ export default StyleSheet.create({
   },
   buttonDesign: {
     padding: 15,
-    // width: Dimensions.get('window').width - 40,
     backgroundColor: 'green',
     alignContent: 'space-around',
     justifyContent: 'space-between',
@@ -24,12 +23,18 @@ export default StyleSheet.create({
   buttonDesign1: {
     padding: 15,
     alignItems: 'flex-end',
-    // width: Dimensions.get('window').width - 40,
     backgroundColor: 'green',
   },
   buttonText: {
     color: 'white',
     textAlign: 'center',
+    alignSelf: 'stretch',
+  },
+  centerText: {
+    fontSize: 26,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
     alignSelf: 'stretch',
   },
 });

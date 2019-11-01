@@ -65,17 +65,19 @@ export default class Home extends Component {
             </View>
           ) : (
             <View style={styles.container}>
-              <View style={{flexDirection: 'row'}}>
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <TouchableOpacity
                   activeOpacity={0.8}
                   style={styles.buttonDesign}
-                  onPress={this.changeView}>
+                  onPress={() => this.changeView()}>
                   <Text style={styles.buttonText}>{this.state.btnText}</Text>
                 </TouchableOpacity>
+                <Text style={styles.centerText}>Home</Text>
                 <TouchableOpacity
                   activeOpacity={0.8}
                   style={styles.buttonDesign1}
-                  onPress={this.logout}>
+                  onPress={() => this.logout()}>
                   <Text style={styles.buttonText}>Logout</Text>
                 </TouchableOpacity>
               </View>
