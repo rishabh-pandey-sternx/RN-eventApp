@@ -48,8 +48,7 @@ const routes = isLoggedIn =>
       Home: StackNavigator,
     },
     {
-      initialRouteName: isLoggedIn ? 'Login' : 'Login',
-      // initialRouteName: isLoggedIn ? 'Home' : 'Login',
+      initialRouteName: isLoggedIn ? 'Home' : 'Login',
     },
   );
 

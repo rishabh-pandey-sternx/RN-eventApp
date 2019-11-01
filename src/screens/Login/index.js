@@ -7,6 +7,7 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './style';
@@ -20,10 +21,19 @@ export default class Login extends Component {
       showPassword: false,
     };
   }
+  _storeData = async () => {
+    try {
+      await AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
+    } catch (error) {
+      // Error saving data
+      console.log('Failed to save data');
+    }
+  };
   save() {
     const {username, password} = this.state;
     const {navigation} = this.props;
     if (username === 'Rishabh' && password === 'Password12') {
+      this._storeData();
       navigation.navigate('Home');
     } else {
       Alert.alert('LogIn Failed', 'Incorrect Credentials');
