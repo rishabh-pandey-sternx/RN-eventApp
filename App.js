@@ -17,7 +17,7 @@ export default class App extends Component {
     super();
     this.state = {
       isLoggedIn: '',
-      lodding: true,
+      loading: true,
     };
   }
   getData = async () => {
@@ -33,7 +33,7 @@ export default class App extends Component {
   };
   async componentDidMount() {
     await this.getData();
-    this.setState({lodding: false});
+    this.setState({loading: false});
   }
 
   render() {
