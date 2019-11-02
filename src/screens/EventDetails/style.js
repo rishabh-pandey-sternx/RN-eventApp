@@ -1,73 +1,27 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
+const {width} = Dimensions.get('window');
 export default StyleSheet.create({
+  nameContainer: {
+    backgroundColor: 'transparent',
+  },
+  titleShow: {
+    fontSize: 35,
+    paddingLeft: 10,
+    marginBottom: 10,
+    color: 'black',
+  },
   container: {
     flex: 1,
+    backgroundColor: '#fff', // 181818
   },
-  eventCard: {
-    borderColor: '#000',
-    height: 150,
-    borderRadius: 5,
-    flex: 1,
-    marginBottom: 10,
-    flexDirection: 'row',
-    backgroundColor: '#1f1d1c',
-    overflow: 'hidden',
-    position: 'relative',
+  thumbnail: {
+    width: width,
+    height: 300,
   },
-  eventBgImg: {
-    width: '100%',
-    height: '100%',
-    flex: 1,
-    resizeMode: 'cover',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    borderRadius: 5,
-    borderColor: '#000',
-  },
-  coverOverlay: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,.4)',
-    top: 0,
-    left: 0,
-  },
-  eventInfo: {
-    width: '100%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    height: '100%',
-    overflow: 'hidden',
-  },
-  eventInfoLeft: {
-    flexDirection: 'column',
-    flex: 3,
-    alignSelf: 'flex-end',
-    backgroundColor: 'rgba(0,0,0,0)',
-    paddingBottom: 10,
-  },
-  eventInfoRight: {
-    flexDirection: 'column',
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
-    margin: 10,
-  },
-  eventTitle: {
-    color: '#FFF',
-    fontSize: 22,
-    paddingLeft: 5,
-  },
-  subtext: {
-    color: '#ffb009',
-    fontSize: 18,
-    paddingLeft: 5,
-  },
-  subtext2: {
-    color: '#a9a9ab',
-    fontSize: 17,
-    paddingLeft: 5,
+  text: {
+    color: '#000', //b3b3b3
+    fontSize: 16,
+    paddingLeft: 10,
   },
 });
