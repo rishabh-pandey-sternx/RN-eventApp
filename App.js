@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {createAppContainer} from 'react-navigation';
-import AsyncStorage from '@react-native-community/async-storage';
+import Storage from './src/utils/storage';
 
 import routes from './src/navigation';
 
@@ -22,7 +22,7 @@ export default class App extends Component {
   }
   getData = async () => {
     try {
-      const value = await AsyncStorage.getItem('isLoggedIn');
+      const value = await Storage.getByKey('isLoggedIn');
       if (value !== null) {
         this.setState({isLoggedIn: value});
       }

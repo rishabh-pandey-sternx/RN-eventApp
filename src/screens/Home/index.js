@@ -7,8 +7,8 @@ import {
   SafeAreaView,
 } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
-import AsyncStorage from '@react-native-community/async-storage';
 
+import Storage from '../../utils/storage';
 import ListItem from '../../components/ListItem';
 import imageData from '../../config/data';
 import styles from './style';
@@ -26,7 +26,7 @@ export default class Home extends Component {
 
   getData = async () => {
     try {
-      const value = await AsyncStorage.getItem('list');
+      const value = await Storage.getByKey('list');
       if (value !== null) {
         this.setState({data: value});
       } else {
@@ -44,7 +44,7 @@ export default class Home extends Component {
   }
 
   logout() {
-    AsyncStorage.clear();
+    Storage.clear();
     this.props.navigation.navigate('Login');
   }
 
@@ -59,7 +59,7 @@ export default class Home extends Component {
   };
   _storeData = async data => {
     try {
-      await AsyncStorage.setItem('list', JSON.stringify(data));
+      await Storage.save('list', data);
     } catch (error) {
       // Error saving data
       console.log('Failed to save data');

@@ -7,9 +7,10 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Storage from '../../utils/storage';
 import styles from './style';
 
 export default class Login extends Component {
@@ -23,7 +24,7 @@ export default class Login extends Component {
   }
   _storeData = async () => {
     try {
-      await AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
+      await Storage.save('isLoggedIn', true);
     } catch (error) {
       // Error saving data
       console.log('Failed to save data');
