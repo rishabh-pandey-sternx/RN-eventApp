@@ -6,7 +6,7 @@
     "fees": 2000,
     "place": "Palace Grounds",
     "uri": "https://consequenceofsound.net/wp-content/uploads/2019/09/Metallica-featured.jpg",
-    "fav": false
+    "favorite": false
   },
   {
     "id": 1,
@@ -15,7 +15,7 @@
     "fees": 200,
     "place": "Malleswaram Grounds",
     "uri": "https://www.hlimg.com/images/events/738X538/National-Silk-Expo_1546586389e.jpg",
-    "fav": false
+    "favorite": false
   },
   {
     "id": 2,
@@ -24,7 +24,7 @@
     "fees": 1000,
     "place": "Links Brewery",
     "uri": "https://i.pinimg.com/originals/67/dc/db/67dcdbde53621aa6e8a9dccaae5f8acf.jpg",
-    "fav": false
+    "favorite": true
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "fees": 100,
     "place": "Kanteerava Indoor Stadium",
     "uri": "https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1546513350/1546513349.jpg",
-    "fav": true
+    "favorite": true
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@
     "fees": 500,
     "place": "Kumara Park",
     "uri": "https://rlv.zcache.com/summer_party_fun_time_beach_ball_invitation-rdd98c808e6eb48dd907c23249222513d_zk9yv_540.jpg",
-    "fav": false
+    "favorite": false
   },
   {
     "id": 5,
@@ -51,7 +51,7 @@
     "fees": 1500,
     "place": "Sarjapur Road",
     "uri": "https://cdn.eventfinda.com.au/uploads/events/transformed/635999-290743-34.jpg",
-    "fav": false
+    "favorite": true
   },
   {
     "id": 6,
@@ -60,7 +60,7 @@
     "fees": 1300,
     "place": "Whitefield",
     "uri": "https://images.squarespace-cdn.com/content/v1/52ccee75e4b00bc0dba03f46/1505798436458-4F5S3F101RMNRH7THJWP/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/BBQ+at+Poolside+Patio%2C+Pan+Pacific+Singapore.jpg",
-    "fav": false
+    "favorite": false
   },
   {
     "id": 7,
@@ -69,7 +69,7 @@
     "fees": 0,
     "place": "Indiranagar",
     "uri": "https://storage.googleapis.com/ehimages/2019/3/20/img_a6946ff19f4a057b2ec2b623e7c39043_1553095252600_processed_original.jpg",
-    "fav": false
+    "favorite": true
   },
   {
     "id": 8,
@@ -78,7 +78,7 @@
     "fees": 0,
     "place": "MG Road",
     "uri": "https://cdn.bizcatalyst360.com/wp-content/uploads/2016/05/29141241/facial-expressons-385x385.jpg",
-    "fav": false
+    "favorite": false
   },
   {
     "id": 9,
@@ -87,6 +87,6 @@
     "fees": 0,
     "place": "Electronic City",
     "uri": "https://www.italymagazine.com/sites/default/files/styles/624xauto/public/feature-story/leader/carneval-lead.jpg",
-    "fav": false
+    "favorite": false
   }
 ]

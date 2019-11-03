@@ -6,6 +6,13 @@ export default StyleSheet.create({
     backgroundColor: '#d6eadf',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    paddingRight: 80,
+    flex: 1,
+    padding: 20,
+    margin: 5,
+  },
+  image: {
+    height: '100%',
+    width: '100%',
+    resizeMode: 'cover',
   },
 });

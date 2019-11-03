@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {SwipeRow} from 'react-native-swipe-list-view';
-import Icon from 'react-native-vector-icons';
+import FastImage from 'react-native-fast-image';
 
 import Image from '../Image';
 import styles from './style';
@@ -15,14 +15,19 @@ const ListItem = ({
   key,
   navigation,
 }) => {
+  const heart = require('../../assets/heart.png');
+  const heart_o = require('../../assets/heart-o.png');
   return (
     <View>
       {!view ? (
-        <SwipeRow rightOpenValue={-75} stopLeftSwipe>
+        <SwipeRow rightOpenValue={-95} stopLeftSwipe>
           <View style={styles.hidden}>
             <TouchableOpacity onPress={onHeartPress}>
-              <Text>slideText</Text>
-              {/* <Icon name={item.favorite ? 'heart' : 'heart-o'} /> */}
+              <Text>{item.favorite ? 'Favorite' : 'Not Favorite'}</Text>
+              {/*    <FastImage
+                source={require('../../assets/heart.png')}
+                style={styles.image}
+          />*/}
             </TouchableOpacity>
           </View>
           <TouchableOpacity

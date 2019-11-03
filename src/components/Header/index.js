@@ -14,21 +14,26 @@ const Header = props => {
 
   return (
     <View style={styles.headerStyle}>
-      <TouchableWithoutFeedback
-        onPress={() => {
-          navigation.goBack();
-        }}>
-        <Text>goBack</Text>
-      </TouchableWithoutFeedback>
-      <Text style={styles.title}>{title}</Text>
+      <View style={{flex: 0.5}}>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            navigation.goBack();
+          }}>
+          <Text style={{fontSize: 17}}>Back</Text>
+        </TouchableWithoutFeedback>
+      </View>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text style={styles.title}>{title}</Text>
+      </View>
+      <View style={{flex: 0.5}} />
     </View>
   );
 };
 const styles = StyleSheet.create({
   headerStyle: {
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-around',
     borderBottomWidth: 1,
     // backgroundColor: 'red',
     borderBottomColor: '#ccc',
@@ -41,12 +46,13 @@ const styles = StyleSheet.create({
     elevation: 4,
     shadowOpacity: 0.15,
     backgroundColor: 'white',
-    paddingTop: Platform.OS === 'ios' ? 22 : 0,
-    height: 95,
+    height: 65,
+    paddingHorizontal: 12,
   },
   title: {
     color: 'black',
-    fontSize: 17,
+    fontSize: 20,
+    fontWeight: '700',
     justifyContent: 'center',
     alignContent: 'center',
   },

@@ -5,12 +5,12 @@ export default StyleSheet.create({
     flex: 1,
   },
   imageHolder: {
-    width: Dimensions.get('window').width / 2,
+    width: Dimensions.get('window').width / 2 - 20,
     margin: 5,
     height: 160,
   },
   imageHolder1: {
-    width: '100%',
+    width: '98%',
     margin: 5,
     height: 160,
     flex: 1,

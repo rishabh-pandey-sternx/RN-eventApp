@@ -44,27 +44,26 @@ export default class Login extends Component {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container} enabled>
         <View style={styles.mainBody}>
+          <View>
+            <Text style={styles.headerText}>Event App</Text>
+          </View>
           <View style={styles.form}>
             <View style={styles.inputGroup}>
-              <View>
-                <TextInput
-                  placeholder={'UserName'}
-                  style={styles.inputBox}
-                  value={this.state.username}
-                  onChangeText={username => this.setState({username})}
-                />
-              </View>
+              <TextInput
+                placeholder={'UserName'}
+                style={styles.inputBox}
+                value={this.state.username}
+                onChangeText={username => this.setState({username})}
+              />
             </View>
             <View style={styles.inputGroup}>
-              <View>
-                <TextInput
-                  placeholder={'Password'}
-                  style={styles.inputBox}
-                  value={this.state.password}
-                  secureTextEntry={this.state.showPassword}
-                  onChangeText={password => this.setState({password})}
-                />
-              </View>
+              <TextInput
+                placeholder={'Password'}
+                style={styles.inputBox}
+                value={this.state.password}
+                secureTextEntry
+                onChangeText={password => this.setState({password})}
+              />
             </View>
             <View>
               <TouchableOpacity
@@ -73,7 +72,9 @@ export default class Login extends Component {
                 }
                 style={styles.button}
                 onPress={() => this.save()}>
-                <Text style={{color: '#a293f8', fontSize: 20}}>Login</Text>
+                <Text style={{color: '#FFF', fontSize: 18, fontWeight: '800'}}>
+                  Login
+                </Text>
               </TouchableOpacity>
             </View>
           </View>

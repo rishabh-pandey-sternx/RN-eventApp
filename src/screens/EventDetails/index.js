@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import Header from '../../components/Header';
 import FastImage from 'react-native-fast-image';
+import MapView from 'react-native-maps';
 
+import Header from '../../components/Header';
 import styles from './style';
+
 export default class EventDetails extends Component {
   constructor(props) {
     super(props);
@@ -22,18 +24,30 @@ export default class EventDetails extends Component {
     const fav = params.item.fav;
 
     return (
-      <ScrollView style={styles.container}>
+      <View style={{flex: 1}}>
         <Header navigation={this.props.navigation} title={name} />
-        <FastImage style={styles.thumbnail} source={{uri: thumbnail}} />
-        <View>
-          <Text style={[styles.text, styles.titleShow]}>{name}</Text>
-          <Text style={[styles.text]}>{place}</Text>
-        </View>
-        <View style={{flex: 1}}>
-          <Text style={[styles.text]}>{entry_fee}</Text>
-          <Text style={[styles.text]}>{fav}</Text>
-        </View>
-      </ScrollView>
+        <ScrollView style={styles.container}>
+          <FastImage style={styles.thumbnail} source={{uri: thumbnail}} />
+          <View style={{paddingVertical: 10}}>
+            <Text style={[styles.text, styles.titleShow]}>{name}</Text>
+            <Text style={[styles.text]}>{place}</Text>
+          </View>
+          <View style={{}}>
+            <Text style={[styles.text]}>{entry_fee}</Text>
+            <Text style={[styles.text]}>{fav}</Text>
+          </View>
+          <View style={{flex: 1}}>
+            <MapView
+              initialRegion={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+            />
+          </View>
+        </ScrollView>
+      </View>
     );
   }
 }

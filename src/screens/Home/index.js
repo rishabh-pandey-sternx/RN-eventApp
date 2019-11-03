@@ -89,25 +89,36 @@ export default class Home extends Component {
             </View>
           ) : (
             <View style={styles.container}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  style={styles.buttonDesign}
-                  onPress={() => this.changeView()}>
-                  <Text style={styles.buttonText}>{this.state.btnText}</Text>
-                </TouchableOpacity>
-                <Text style={styles.centerText}>Home</Text>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  style={styles.buttonDesign1}
-                  onPress={() => this.logout()}>
-                  <Text style={styles.buttonText}>Logout</Text>
-                </TouchableOpacity>
+              <View style={styles.headerStyle}>
+                <View style={{flex: 1}} />
+                <View style={{flex: 1}}>
+                  <Text style={styles.centerText}>Home</Text>
+                </View>
+                <View style={{flex: 1}}>
+                  <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.buttonDesign1}
+                    onPress={() => this.logout()}>
+                    <Text style={styles.buttonText}>Logout</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
+              <TouchableOpacity
+                activeOpacity={0.8}
+                style={styles.buttonDesign}
+                onPress={() => this.changeView()}>
+                <Text
+                  style={[
+                    styles.buttonText,
+                    {color: '#a293f8', fontWeight: '600'},
+                  ]}>
+                  {this.state.btnText}
+                </Text>
+              </TouchableOpacity>
               <DraggableFlatList
                 data={this.state.data}
                 key={this.state.gridView ? 1 : 0}
+                style={{paddingHorizontal: 10}}
                 numColumns={this.state.gridView ? 2 : 1}
                 renderItem={({item, move, moveEnd}) => (
                   <ListItem
